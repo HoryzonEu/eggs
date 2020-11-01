@@ -3,14 +3,14 @@
     "meta": {
         "version": "PTDL_v1"
     },
-    "exported_at": "2020-11-01T20:46:32+01:00",
+    "exported_at": "2020-11-01T21:12:02+01:00",
     "name": "Paper Fork",
     "author": "contact@horyzon.eu",
     "description": "High performance Spigot fork that aims to fix gameplay and mechanics inconsistencies.",
     "image": "quay.io\/parkervcp\/pterodactyl-images:debian_openjdk-11",
     "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}}",
     "config": {
-        "files": "{\r\n    \"server.properties\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"server-ip\": \"0.0.0.0\",\r\n            \"server-port\": \"{{server.build.default.port}}\",\r\n            \"onlinde-mode\": \"true\"\r\n        }\r\n    },\r\n    \"spigot.yml\": {\r\n        \"parser\": \"yaml\",\r\n        \"find\": {\r\n            \"settings.bungeecord\": \"true\"\r\n        }\r\n    }\r\n}",
+        "files": "{\r\n    \"spigot.yml\": {\r\n        \"parser\": \"yaml\",\r\n        \"find\": {\r\n            \"settings.bungeecord\": true\r\n        }\r\n    },\r\n    \"server.properties\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"server-ip\": \"0.0.0.0\",\r\n            \"server-port\": \"{{server.build.default.port}}\",\r\n            \"online-mode\": \"false\"\r\n        }\r\n    }\r\n}",
         "startup": "{\r\n    \"done\": \")! For help, type \",\r\n    \"userInteraction\": [\r\n        \"Go to eula.txt for more info.\"\r\n    ]\r\n}",
         "logs": "{}",
         "stop": "stop"
